@@ -1,0 +1,199 @@
+{
+  "model": {
+    "model": "Model1(\n  (features): Sequential(\n    (0): Conv2d(1, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (1): ReLU()\n    (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (3): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (4): ReLU()\n    (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  )\n  (classifier): Sequential(\n    (0): AdaptiveAvgPool2d(output_size=(1, 1))\n    (1): Flatten(start_dim=1, end_dim=-1)\n    (2): Linear(in_features=32, out_features=4, bias=True)\n  )\n  (_target_layer): ReLU()\n)",
+    "criterion": "CrossEntropyLoss()",
+    "optimizer": "Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n    capturable: False\n    decoupled_weight_decay: False\n    differentiable: False\n    eps: 1e-08\n    foreach: None\n    fused: None\n    lr: 0.0001\n    maximize: False\n    weight_decay: 0\n)",
+    "scheduler": "<torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x7404260d4c50>",
+    "device": "cuda",
+    "seed": 1202219326
+  },
+  "dataset": {
+    "name": "Brain Tumor MRI",
+    "description": "MRI images of brain tumors categorized into four types.",
+    "source": "https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset",
+    "task": "image classification",
+    "num_labels": 4,
+    "label_names": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "length": {
+      "train": 5712,
+      "test": 1311,
+      "val": null
+    }
+  },
+  "epochs": 20,
+  "start_time": null,
+  "end_time": null,
+  "duration": null,
+  "best_epoch": {
+    "epochs": 15,
+    "valid_accuracy": 56.1404,
+    "valid_loss": 1.1251
+  },
+  "history": [
+    {
+      "epochs": 1,
+      "train_loss": 1.3756,
+      "train_accuracy": 29.4293,
+      "valid_loss": 1.3539,
+      "valid_accuracy": 32.4943,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 2,
+      "train_loss": 1.3168,
+      "train_accuracy": 41.5441,
+      "valid_loss": 1.3002,
+      "valid_accuracy": 45.3852,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 3,
+      "train_loss": 1.2511,
+      "train_accuracy": 49.3172,
+      "valid_loss": 1.2578,
+      "valid_accuracy": 51.106,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 4,
+      "train_loss": 1.1988,
+      "train_accuracy": 56.6702,
+      "valid_loss": 1.2327,
+      "valid_accuracy": 52.479,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 5,
+      "train_loss": 1.1614,
+      "train_accuracy": 61.0294,
+      "valid_loss": 1.2192,
+      "valid_accuracy": 54.9962,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 6,
+      "train_loss": 1.1339,
+      "train_accuracy": 59.944,
+      "valid_loss": 1.2062,
+      "valid_accuracy": 55.6827,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 7,
+      "train_loss": 1.1118,
+      "train_accuracy": 61.7997,
+      "valid_loss": 1.1953,
+      "valid_accuracy": 54.8436,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 8,
+      "train_loss": 1.0935,
+      "train_accuracy": 61.6422,
+      "valid_loss": 1.185,
+      "valid_accuracy": 55.4539,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 9,
+      "train_loss": 1.0781,
+      "train_accuracy": 62.3249,
+      "valid_loss": 1.1767,
+      "valid_accuracy": 54.7674,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 10,
+      "train_loss": 1.0626,
+      "train_accuracy": 62.2549,
+      "valid_loss": 1.1659,
+      "valid_accuracy": 55.0725,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 11,
+      "train_loss": 1.0502,
+      "train_accuracy": 62.465,
+      "valid_loss": 1.1575,
+      "valid_accuracy": 54.7674,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 12,
+      "train_loss": 1.0374,
+      "train_accuracy": 62.605,
+      "valid_loss": 1.1475,
+      "valid_accuracy": 55.225,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 13,
+      "train_loss": 1.0272,
+      "train_accuracy": 62.9027,
+      "valid_loss": 1.141,
+      "valid_accuracy": 54.7674,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 14,
+      "train_loss": 1.0175,
+      "train_accuracy": 63.1127,
+      "valid_loss": 1.1327,
+      "valid_accuracy": 55.8352,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 15,
+      "train_loss": 1.0083,
+      "train_accuracy": 62.8676,
+      "valid_loss": 1.1251,
+      "valid_accuracy": 56.1404,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 16,
+      "train_loss": 0.9981,
+      "train_accuracy": 63.6204,
+      "valid_loss": 1.1195,
+      "valid_accuracy": 55.3013,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 17,
+      "train_loss": 0.989,
+      "train_accuracy": 63.0777,
+      "valid_loss": 1.113,
+      "valid_accuracy": 55.4539,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 18,
+      "train_loss": 0.9802,
+      "train_accuracy": 63.0952,
+      "valid_loss": 1.1073,
+      "valid_accuracy": 55.3776,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 19,
+      "train_loss": 0.9734,
+      "train_accuracy": 63.5154,
+      "valid_loss": 1.1037,
+      "valid_accuracy": 55.3013,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 20,
+      "train_loss": 0.9666,
+      "train_accuracy": 63.708,
+      "valid_loss": 1.099,
+      "valid_accuracy": 54.7674,
+      "lr": 0.0001
+    }
+  ]
+}

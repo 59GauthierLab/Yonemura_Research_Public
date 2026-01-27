@@ -1,0 +1,72 @@
+version: "3"
+
+vars:
+  PYTHONHASHSEED: "42"
+  CUBLAS_WORKSPACE_CONFIG: ":4096:8"
+  VENV_DIR: ".venv"
+
+tasks:
+  set-repro-env:
+    desc: Set reproducibility environment variables into all venv activate scripts
+    cmds:
+      # ---------- bash / zsh ----------
+      - |
+        ACT="{{.VENV_DIR}}/bin/activate"
+        if [ -f "$ACT" ] && ! grep -q "Setting for reproducibility" "$ACT"; then
+          echo "" >> "$ACT"
+          echo "# Setting for reproducibility" >> "$ACT"
+          echo "export PYTHONHASHSEED={{.PYTHONHASHSEED}}" >> "$ACT"
+          echo "export CUBLAS_WORKSPACE_CONFIG={{.CUBLAS_WORKSPACE_CONFIG}}" >> "$ACT"
+        fi
+
+      # ---------- fish ----------
+      - |
+        ACT="{{.VENV_DIR}}/bin/activate.fish"
+        if [ -f "$ACT" ] && ! grep -q "Setting for reproducibility" "$ACT"; then
+          echo "" >> "$ACT"
+          echo "# Setting for reproducibility" >> "$ACT"
+          echo "set -x PYTHONHASHSEED {{.PYTHONHASHSEED}}" >> "$ACT"
+          echo "set -x CUBLAS_WORKSPACE_CONFIG {{.CUBLAS_WORKSPACE_CONFIG}}" >> "$ACT"
+        fi
+
+      # ---------- csh / tcsh ----------
+      - |
+        ACT="{{.VENV_DIR}}/bin/activate.csh"
+        if [ -f "$ACT" ] && ! grep -q "Setting for reproducibility" "$ACT"; then
+          echo "" >> "$ACT"
+          echo "# Setting for reproducibility" >> "$ACT"
+          echo "setenv PYTHONHASHSEED {{.PYTHONHASHSEED}}" >> "$ACT"
+          echo "setenv CUBLAS_WORKSPACE_CONFIG {{.CUBLAS_WORKSPACE_CONFIG}}" >> "$ACT"
+        fi
+
+      # ---------- Windows batch ----------
+      - |
+        ACT="{{.VENV_DIR}}/bin/activate.bat"
+        if [ -f "$ACT" ] && ! grep -q "Setting for reproducibility" "$ACT"; then
+          echo >>"$ACT"
+          echo rem Setting for reproducibility>>"$ACT"
+          echo set PYTHONHASHSEED={{.PYTHONHASHSEED}}>>"$ACT"
+          echo set CUBLAS_WORKSPACE_CONFIG={{.CUBLAS_WORKSPACE_CONFIG}}>>"$ACT"
+        fi
+
+      # ---------- PowerShell ----------
+      - |
+        ACT="{{.VENV_DIR}}/bin/activate.ps1"
+        if [ -f "$ACT" ] && ! grep -q "Setting for reproducibility" "$ACT"; then
+          echo "" >> "$ACT"
+          echo "# Setting for reproducibility" >> "$ACT"
+          echo "\$Env:PYTHONHASHSEED='{{.PYTHONHASHSEED}}'" >> "$ACT"
+          echo "\$Env:CUBLAS_WORKSPACE_CONFIG='{{.CUBLAS_WORKSPACE_CONFIG}}'" >> "$ACT"
+        fi
+
+      # ---------- Nushell ----------
+      - |
+        ACT="{{.VENV_DIR}}/bin/activate.nu"
+        if [ -f "$ACT" ] && ! grep -q "Setting for reproducibility" "$ACT"; then
+          echo "" >> "$ACT"
+          echo "# Setting for reproducibility" >> "$ACT"
+          echo "$env.PYTHONHASHSEED = '{{.PYTHONHASHSEED}}'" >> "$ACT"
+          echo "$env.CUBLAS_WORKSPACE_CONFIG = '{{.CUBLAS_WORKSPACE_CONFIG}}'" >> "$ACT"
+        fi
+
+    silent: true

@@ -1,0 +1,30 @@
+{
+  "model": {
+    "model": "Model1(\n  (features): Sequential(\n    (0): Conv2d(1, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (1): ReLU()\n    (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (3): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (4): ReLU()\n    (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  )\n  (classifier): Sequential(\n    (0): AdaptiveAvgPool2d(output_size=(1, 1))\n    (1): Flatten(start_dim=1, end_dim=-1)\n    (2): Linear(in_features=32, out_features=4, bias=True)\n  )\n  (_target_layer): ReLU()\n)",
+    "criterion": "CamConsistencyLossWithCrossEntropy(\n  (model): Model1(\n    (features): Sequential(\n      (0): Conv2d(1, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n      (1): ReLU()\n      (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      (3): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n      (4): ReLU()\n      (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    )\n    (classifier): Sequential(\n      (0): AdaptiveAvgPool2d(output_size=(1, 1))\n      (1): Flatten(start_dim=1, end_dim=-1)\n      (2): Linear(in_features=32, out_features=4, bias=True)\n    )\n    (_target_layer): ReLU()\n  )\n  (cam_consistency_loss): CamConsistencyLoss(\n    (model): Model1(\n      (features): Sequential(\n        (0): Conv2d(1, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): ReLU()\n        (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n        (3): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (4): ReLU()\n        (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      )\n      (classifier): Sequential(\n        (0): AdaptiveAvgPool2d(output_size=(1, 1))\n        (1): Flatten(start_dim=1, end_dim=-1)\n        (2): Linear(in_features=32, out_features=4, bias=True)\n      )\n      (_target_layer): ReLU()\n    )\n  )\n  (cross_entropy_loss): CrossEntropyLoss()\n)",
+    "optimizer": "Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n    capturable: False\n    decoupled_weight_decay: False\n    differentiable: False\n    eps: 1e-08\n    foreach: None\n    fused: None\n    lr: 0.0001\n    maximize: False\n    weight_decay: 0\n)",
+    "scheduler": "[(<torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x723652de73d0>, 'validation'), (<loss_func.LambdaScheduler object at 0x723652de7890>, 'epoch')]",
+    "device": "cuda",
+    "seed": 239797755
+  },
+  "dataset": {
+    "name": "Brain Tumor MRI",
+    "description": "MRI images of brain tumors categorized into four types.",
+    "source": "https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset",
+    "task": "image classification",
+    "num_labels": 4,
+    "label_names": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "length": {
+      "train": 5712,
+      "test": 1311,
+      "val": null
+    }
+  },
+  "test_loss": 1.0566,
+  "test_accuracy": 56.1404
+}

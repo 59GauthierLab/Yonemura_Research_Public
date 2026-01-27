@@ -1,0 +1,5 @@
+{
+    "experiment_name": "consistency_eval_chestxray",
+    "description": "一貫性とモデル精度(Cohen's kappa)の関係を評価する実験(Chest X-rayデータセット使用)",
+    "created_at": "2026-01-18T16:37:50.399709"
+}

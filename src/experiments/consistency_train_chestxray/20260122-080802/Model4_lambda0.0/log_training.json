@@ -1,0 +1,437 @@
+{
+  "model": {
+    "model": "Model4(\n  (features): Sequential(\n    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (2): ReLU()\n    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (4): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (6): ReLU()\n    (7): SEBlock(\n      (fc): Sequential(\n        (0): AdaptiveAvgPool2d(output_size=1)\n        (1): Flatten(start_dim=1, end_dim=-1)\n        (2): Linear(in_features=64, out_features=4, bias=True)\n        (3): ReLU()\n        (4): Linear(in_features=4, out_features=64, bias=True)\n        (5): Sigmoid()\n      )\n    )\n    (8): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (9): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (10): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (11): ReLU()\n    (12): SEBlock(\n      (fc): Sequential(\n        (0): AdaptiveAvgPool2d(output_size=1)\n        (1): Flatten(start_dim=1, end_dim=-1)\n        (2): Linear(in_features=128, out_features=8, bias=True)\n        (3): ReLU()\n        (4): Linear(in_features=8, out_features=128, bias=True)\n        (5): Sigmoid()\n      )\n    )\n    (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (14): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (15): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (16): ReLU()\n    (17): SEBlock(\n      (fc): Sequential(\n        (0): AdaptiveAvgPool2d(output_size=1)\n        (1): Flatten(start_dim=1, end_dim=-1)\n        (2): Linear(in_features=256, out_features=16, bias=True)\n        (3): ReLU()\n        (4): Linear(in_features=16, out_features=256, bias=True)\n        (5): Sigmoid()\n      )\n    )\n  )\n  (classifier): Sequential(\n    (0): AdaptiveAvgPool2d(output_size=1)\n    (1): Flatten(start_dim=1, end_dim=-1)\n    (2): Dropout(p=0.5, inplace=False)\n    (3): Linear(in_features=256, out_features=2, bias=True)\n  )\n  (_target_layer): SEBlock(\n    (fc): Sequential(\n      (0): AdaptiveAvgPool2d(output_size=1)\n      (1): Flatten(start_dim=1, end_dim=-1)\n      (2): Linear(in_features=256, out_features=16, bias=True)\n      (3): ReLU()\n      (4): Linear(in_features=16, out_features=256, bias=True)\n      (5): Sigmoid()\n    )\n  )\n)",
+    "criterion": "CamConsistencyLossWithCrossEntropy(\n  (model): Model4(\n    (features): Sequential(\n      (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (2): ReLU()\n      (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      (4): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n      (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (6): ReLU()\n      (7): SEBlock(\n        (fc): Sequential(\n          (0): AdaptiveAvgPool2d(output_size=1)\n          (1): Flatten(start_dim=1, end_dim=-1)\n          (2): Linear(in_features=64, out_features=4, bias=True)\n          (3): ReLU()\n          (4): Linear(in_features=4, out_features=64, bias=True)\n          (5): Sigmoid()\n        )\n      )\n      (8): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      (9): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n      (10): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (11): ReLU()\n      (12): SEBlock(\n        (fc): Sequential(\n          (0): AdaptiveAvgPool2d(output_size=1)\n          (1): Flatten(start_dim=1, end_dim=-1)\n          (2): Linear(in_features=128, out_features=8, bias=True)\n          (3): ReLU()\n          (4): Linear(in_features=8, out_features=128, bias=True)\n          (5): Sigmoid()\n        )\n      )\n      (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      (14): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n      (15): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (16): ReLU()\n      (17): SEBlock(\n        (fc): Sequential(\n          (0): AdaptiveAvgPool2d(output_size=1)\n          (1): Flatten(start_dim=1, end_dim=-1)\n          (2): Linear(in_features=256, out_features=16, bias=True)\n          (3): ReLU()\n          (4): Linear(in_features=16, out_features=256, bias=True)\n          (5): Sigmoid()\n        )\n      )\n    )\n    (classifier): Sequential(\n      (0): AdaptiveAvgPool2d(output_size=1)\n      (1): Flatten(start_dim=1, end_dim=-1)\n      (2): Dropout(p=0.5, inplace=False)\n      (3): Linear(in_features=256, out_features=2, bias=True)\n    )\n    (_target_layer): SEBlock(\n      (fc): Sequential(\n        (0): AdaptiveAvgPool2d(output_size=1)\n        (1): Flatten(start_dim=1, end_dim=-1)\n        (2): Linear(in_features=256, out_features=16, bias=True)\n        (3): ReLU()\n        (4): Linear(in_features=16, out_features=256, bias=True)\n        (5): Sigmoid()\n      )\n    )\n  )\n  (cam_consistency_loss): CamConsistencyLoss(\n    (model): Model4(\n      (features): Sequential(\n        (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n        (2): ReLU()\n        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n        (4): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n        (6): ReLU()\n        (7): SEBlock(\n          (fc): Sequential(\n            (0): AdaptiveAvgPool2d(output_size=1)\n            (1): Flatten(start_dim=1, end_dim=-1)\n            (2): Linear(in_features=64, out_features=4, bias=True)\n            (3): ReLU()\n            (4): Linear(in_features=4, out_features=64, bias=True)\n            (5): Sigmoid()\n          )\n        )\n        (8): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n        (9): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (10): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n        (11): ReLU()\n        (12): SEBlock(\n          (fc): Sequential(\n            (0): AdaptiveAvgPool2d(output_size=1)\n            (1): Flatten(start_dim=1, end_dim=-1)\n            (2): Linear(in_features=128, out_features=8, bias=True)\n            (3): ReLU()\n            (4): Linear(in_features=8, out_features=128, bias=True)\n            (5): Sigmoid()\n          )\n        )\n        (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n        (14): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (15): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n        (16): ReLU()\n        (17): SEBlock(\n          (fc): Sequential(\n            (0): AdaptiveAvgPool2d(output_size=1)\n            (1): Flatten(start_dim=1, end_dim=-1)\n            (2): Linear(in_features=256, out_features=16, bias=True)\n            (3): ReLU()\n            (4): Linear(in_features=16, out_features=256, bias=True)\n            (5): Sigmoid()\n          )\n        )\n      )\n      (classifier): Sequential(\n        (0): AdaptiveAvgPool2d(output_size=1)\n        (1): Flatten(start_dim=1, end_dim=-1)\n        (2): Dropout(p=0.5, inplace=False)\n        (3): Linear(in_features=256, out_features=2, bias=True)\n      )\n      (_target_layer): SEBlock(\n        (fc): Sequential(\n          (0): AdaptiveAvgPool2d(output_size=1)\n          (1): Flatten(start_dim=1, end_dim=-1)\n          (2): Linear(in_features=256, out_features=16, bias=True)\n          (3): ReLU()\n          (4): Linear(in_features=16, out_features=256, bias=True)\n          (5): Sigmoid()\n        )\n      )\n    )\n  )\n  (cross_entropy_loss): CrossEntropyLoss()\n)",
+    "optimizer": "Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n    capturable: False\n    decoupled_weight_decay: False\n    differentiable: False\n    eps: 1e-08\n    foreach: None\n    fused: None\n    lr: 1.0000000000000004e-08\n    maximize: False\n    weight_decay: 0\n)",
+    "scheduler": "[(<torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x7f4d2e8bc690>, 'validation'), (<loss_func.LambdaScheduler object at 0x7f4d2e8bdf50>, 'epoch')]",
+    "device": "cuda",
+    "seed": 1159112359
+  },
+  "dataset": {
+    "name": "Chest X-Ray Image (Pneumonia)",
+    "description": "X-ray images categorized into normal and pneumonia classes.",
+    "source": "https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia",
+    "task": "image classification",
+    "num_labels": 2,
+    "label_names": [
+      "NORMAL",
+      "PNEUMONIA"
+    ],
+    "length": {
+      "train": 5216,
+      "test": 624,
+      "val": 16
+    }
+  },
+  "epochs": 50,
+  "start_time": null,
+  "end_time": null,
+  "duration": null,
+  "best_epoch": {
+    "epochs": 13,
+    "valid_accuracy": 90.2244,
+    "valid_loss": 0.32
+  },
+  "history": [
+    {
+      "epochs": 1,
+      "train_loss": 0.3908,
+      "train_accuracy": 85.7362,
+      "valid_loss": 0.4451,
+      "valid_accuracy": 82.5321,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 2,
+      "train_loss": 0.2961,
+      "train_accuracy": 87.9601,
+      "valid_loss": 0.4621,
+      "valid_accuracy": 79.6474,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 3,
+      "train_loss": 0.2502,
+      "train_accuracy": 89.7623,
+      "valid_loss": 0.5701,
+      "valid_accuracy": 73.0769,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 4,
+      "train_loss": 0.213,
+      "train_accuracy": 91.6028,
+      "valid_loss": 0.4005,
+      "valid_accuracy": 83.1731,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 5,
+      "train_loss": 0.1872,
+      "train_accuracy": 93.0598,
+      "valid_loss": 0.8245,
+      "valid_accuracy": 67.1474,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 6,
+      "train_loss": 0.172,
+      "train_accuracy": 93.4816,
+      "valid_loss": 0.7378,
+      "valid_accuracy": 68.9103,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 7,
+      "train_loss": 0.1571,
+      "train_accuracy": 94.421,
+      "valid_loss": 0.2984,
+      "valid_accuracy": 88.6218,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 8,
+      "train_loss": 0.1406,
+      "train_accuracy": 94.6894,
+      "valid_loss": 0.6892,
+      "valid_accuracy": 75.0,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 9,
+      "train_loss": 0.1407,
+      "train_accuracy": 94.6894,
+      "valid_loss": 0.3235,
+      "valid_accuracy": 87.9808,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 10,
+      "train_loss": 0.1303,
+      "train_accuracy": 95.1879,
+      "valid_loss": 0.5373,
+      "valid_accuracy": 81.25,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 11,
+      "train_loss": 0.1256,
+      "train_accuracy": 95.5713,
+      "valid_loss": 0.3996,
+      "valid_accuracy": 85.5769,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 12,
+      "train_loss": 0.1193,
+      "train_accuracy": 95.3029,
+      "valid_loss": 0.866,
+      "valid_accuracy": 70.8333,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 13,
+      "train_loss": 0.1251,
+      "train_accuracy": 95.4563,
+      "valid_loss": 0.32,
+      "valid_accuracy": 90.2244,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 14,
+      "train_loss": 0.1051,
+      "train_accuracy": 96.2423,
+      "valid_loss": 0.4449,
+      "valid_accuracy": 84.1346,
+      "lr": 0.0
+    },
+    {
+      "epochs": 15,
+      "train_loss": 0.1031,
+      "train_accuracy": 96.3765,
+      "valid_loss": 0.3883,
+      "valid_accuracy": 87.1795,
+      "lr": 0.0
+    },
+    {
+      "epochs": 16,
+      "train_loss": 0.0992,
+      "train_accuracy": 96.4724,
+      "valid_loss": 0.4882,
+      "valid_accuracy": 81.7308,
+      "lr": 0.0
+    },
+    {
+      "epochs": 17,
+      "train_loss": 0.0977,
+      "train_accuracy": 96.7983,
+      "valid_loss": 0.4843,
+      "valid_accuracy": 82.3718,
+      "lr": 0.0
+    },
+    {
+      "epochs": 18,
+      "train_loss": 0.095,
+      "train_accuracy": 96.2807,
+      "valid_loss": 0.4847,
+      "valid_accuracy": 82.3718,
+      "lr": 0.0
+    },
+    {
+      "epochs": 19,
+      "train_loss": 0.0991,
+      "train_accuracy": 96.76,
+      "valid_loss": 0.4813,
+      "valid_accuracy": 83.1731,
+      "lr": 0.0
+    },
+    {
+      "epochs": 20,
+      "train_loss": 0.0939,
+      "train_accuracy": 96.6833,
+      "valid_loss": 0.4668,
+      "valid_accuracy": 83.8141,
+      "lr": 0.0
+    },
+    {
+      "epochs": 21,
+      "train_loss": 0.095,
+      "train_accuracy": 96.7216,
+      "valid_loss": 0.4446,
+      "valid_accuracy": 85.0962,
+      "lr": 0.0
+    },
+    {
+      "epochs": 22,
+      "train_loss": 0.0921,
+      "train_accuracy": 96.5874,
+      "valid_loss": 0.4634,
+      "valid_accuracy": 83.8141,
+      "lr": 0.0
+    },
+    {
+      "epochs": 23,
+      "train_loss": 0.0864,
+      "train_accuracy": 96.9133,
+      "valid_loss": 0.4198,
+      "valid_accuracy": 86.6987,
+      "lr": 0.0
+    },
+    {
+      "epochs": 24,
+      "train_loss": 0.094,
+      "train_accuracy": 96.6258,
+      "valid_loss": 0.4409,
+      "valid_accuracy": 85.5769,
+      "lr": 0.0
+    },
+    {
+      "epochs": 25,
+      "train_loss": 0.0934,
+      "train_accuracy": 96.6258,
+      "valid_loss": 0.4429,
+      "valid_accuracy": 85.4167,
+      "lr": 0.0
+    },
+    {
+      "epochs": 26,
+      "train_loss": 0.0908,
+      "train_accuracy": 96.8942,
+      "valid_loss": 0.4749,
+      "valid_accuracy": 83.3333,
+      "lr": 0.0
+    },
+    {
+      "epochs": 27,
+      "train_loss": 0.0942,
+      "train_accuracy": 96.5491,
+      "valid_loss": 0.5028,
+      "valid_accuracy": 81.891,
+      "lr": 0.0
+    },
+    {
+      "epochs": 28,
+      "train_loss": 0.09,
+      "train_accuracy": 96.8367,
+      "valid_loss": 0.4899,
+      "valid_accuracy": 82.3718,
+      "lr": 0.0
+    },
+    {
+      "epochs": 29,
+      "train_loss": 0.0896,
+      "train_accuracy": 97.0475,
+      "valid_loss": 0.4527,
+      "valid_accuracy": 84.4551,
+      "lr": 0.0
+    },
+    {
+      "epochs": 30,
+      "train_loss": 0.0919,
+      "train_accuracy": 96.6641,
+      "valid_loss": 0.4319,
+      "valid_accuracy": 85.7372,
+      "lr": 0.0
+    },
+    {
+      "epochs": 31,
+      "train_loss": 0.0911,
+      "train_accuracy": 96.5874,
+      "valid_loss": 0.452,
+      "valid_accuracy": 84.9359,
+      "lr": 0.0
+    },
+    {
+      "epochs": 32,
+      "train_loss": 0.0925,
+      "train_accuracy": 96.6641,
+      "valid_loss": 0.4585,
+      "valid_accuracy": 84.6154,
+      "lr": 0.0
+    },
+    {
+      "epochs": 33,
+      "train_loss": 0.0929,
+      "train_accuracy": 96.7408,
+      "valid_loss": 0.4692,
+      "valid_accuracy": 84.1346,
+      "lr": 0.0
+    },
+    {
+      "epochs": 34,
+      "train_loss": 0.0928,
+      "train_accuracy": 96.6833,
+      "valid_loss": 0.4268,
+      "valid_accuracy": 85.8974,
+      "lr": 0.0
+    },
+    {
+      "epochs": 35,
+      "train_loss": 0.0942,
+      "train_accuracy": 96.6641,
+      "valid_loss": 0.5054,
+      "valid_accuracy": 81.7308,
+      "lr": 0.0
+    },
+    {
+      "epochs": 36,
+      "train_loss": 0.0919,
+      "train_accuracy": 96.7791,
+      "valid_loss": 0.436,
+      "valid_accuracy": 85.4167,
+      "lr": 0.0
+    },
+    {
+      "epochs": 37,
+      "train_loss": 0.0909,
+      "train_accuracy": 96.9517,
+      "valid_loss": 0.5139,
+      "valid_accuracy": 81.25,
+      "lr": 0.0
+    },
+    {
+      "epochs": 38,
+      "train_loss": 0.0905,
+      "train_accuracy": 96.6449,
+      "valid_loss": 0.4255,
+      "valid_accuracy": 86.2179,
+      "lr": 0.0
+    },
+    {
+      "epochs": 39,
+      "train_loss": 0.0931,
+      "train_accuracy": 96.6833,
+      "valid_loss": 0.4504,
+      "valid_accuracy": 84.9359,
+      "lr": 0.0
+    },
+    {
+      "epochs": 40,
+      "train_loss": 0.0927,
+      "train_accuracy": 96.6833,
+      "valid_loss": 0.447,
+      "valid_accuracy": 85.2564,
+      "lr": 0.0
+    },
+    {
+      "epochs": 41,
+      "train_loss": 0.0914,
+      "train_accuracy": 96.7791,
+      "valid_loss": 0.4727,
+      "valid_accuracy": 83.6538,
+      "lr": 0.0
+    },
+    {
+      "epochs": 42,
+      "train_loss": 0.0905,
+      "train_accuracy": 96.7025,
+      "valid_loss": 0.5028,
+      "valid_accuracy": 82.2115,
+      "lr": 0.0
+    },
+    {
+      "epochs": 43,
+      "train_loss": 0.0929,
+      "train_accuracy": 97.1434,
+      "valid_loss": 0.4614,
+      "valid_accuracy": 84.2949,
+      "lr": 0.0
+    },
+    {
+      "epochs": 44,
+      "train_loss": 0.0949,
+      "train_accuracy": 96.434,
+      "valid_loss": 0.4759,
+      "valid_accuracy": 83.1731,
+      "lr": 0.0
+    },
+    {
+      "epochs": 45,
+      "train_loss": 0.0966,
+      "train_accuracy": 96.6641,
+      "valid_loss": 0.4001,
+      "valid_accuracy": 87.3397,
+      "lr": 0.0
+    },
+    {
+      "epochs": 46,
+      "train_loss": 0.0898,
+      "train_accuracy": 96.9133,
+      "valid_loss": 0.4146,
+      "valid_accuracy": 86.5385,
+      "lr": 0.0
+    },
+    {
+      "epochs": 47,
+      "train_loss": 0.0934,
+      "train_accuracy": 96.7983,
+      "valid_loss": 0.471,
+      "valid_accuracy": 83.8141,
+      "lr": 0.0
+    },
+    {
+      "epochs": 48,
+      "train_loss": 0.0896,
+      "train_accuracy": 96.9517,
+      "valid_loss": 0.4865,
+      "valid_accuracy": 83.1731,
+      "lr": 0.0
+    },
+    {
+      "epochs": 49,
+      "train_loss": 0.0861,
+      "train_accuracy": 97.3351,
+      "valid_loss": 0.4512,
+      "valid_accuracy": 84.9359,
+      "lr": 0.0
+    },
+    {
+      "epochs": 50,
+      "train_loss": 0.0923,
+      "train_accuracy": 96.6833,
+      "valid_loss": 0.437,
+      "valid_accuracy": 85.4167,
+      "lr": 0.0
+    }
+  ]
+}

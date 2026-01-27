@@ -1,0 +1,197 @@
+{
+  "model": {
+    "model": "Model2(\n  (features): Sequential(\n    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (2): ReLU()\n    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (4): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (6): ReLU()\n    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (8): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (10): ReLU()\n    (11): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (12): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (13): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (14): ReLU()\n  )\n  (classifier): Sequential(\n    (0): AdaptiveAvgPool2d(output_size=(1, 1))\n    (1): Flatten(start_dim=1, end_dim=-1)\n    (2): Dropout(p=0.5, inplace=False)\n    (3): Linear(in_features=256, out_features=2, bias=True)\n  )\n  (_target_layer): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n)",
+    "criterion": "CrossEntropyLoss()",
+    "optimizer": "Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n    capturable: False\n    decoupled_weight_decay: False\n    differentiable: False\n    eps: 1e-08\n    foreach: None\n    fused: None\n    lr: 1.0000000000000002e-06\n    maximize: False\n    weight_decay: 0\n)",
+    "scheduler": "<torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x7d1f84997290>",
+    "device": "cuda",
+    "seed": 2428778631
+  },
+  "dataset": {
+    "name": "Chest X-Ray Image (Pneumonia)",
+    "description": "X-ray images categorized into normal and pneumonia classes.",
+    "source": "https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia",
+    "task": "image classification",
+    "num_labels": 2,
+    "label_names": [
+      "NORMAL",
+      "PNEUMONIA"
+    ],
+    "length": {
+      "train": 5216,
+      "test": 624,
+      "val": 16
+    }
+  },
+  "epochs": 20,
+  "start_time": null,
+  "end_time": null,
+  "duration": null,
+  "best_epoch": {
+    "epochs": 14,
+    "valid_accuracy": 89.2628,
+    "valid_loss": 0.3249
+  },
+  "history": [
+    {
+      "epochs": 1,
+      "train_loss": 0.3292,
+      "train_accuracy": 86.3305,
+      "valid_loss": 0.6018,
+      "valid_accuracy": 66.9872,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 2,
+      "train_loss": 0.2589,
+      "train_accuracy": 89.9156,
+      "valid_loss": 0.4294,
+      "valid_accuracy": 79.3269,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 3,
+      "train_loss": 0.2295,
+      "train_accuracy": 90.9701,
+      "valid_loss": 0.4431,
+      "valid_accuracy": 80.609,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 4,
+      "train_loss": 0.2039,
+      "train_accuracy": 92.3313,
+      "valid_loss": 0.7522,
+      "valid_accuracy": 66.3462,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 5,
+      "train_loss": 0.1844,
+      "train_accuracy": 93.309,
+      "valid_loss": 0.3538,
+      "valid_accuracy": 84.6154,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 6,
+      "train_loss": 0.1685,
+      "train_accuracy": 94.2676,
+      "valid_loss": 0.4334,
+      "valid_accuracy": 80.9295,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 7,
+      "train_loss": 0.1593,
+      "train_accuracy": 94.3252,
+      "valid_loss": 0.6486,
+      "valid_accuracy": 70.1923,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 8,
+      "train_loss": 0.1534,
+      "train_accuracy": 94.4785,
+      "valid_loss": 0.296,
+      "valid_accuracy": 89.1026,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 9,
+      "train_loss": 0.1443,
+      "train_accuracy": 94.7661,
+      "valid_loss": 0.3555,
+      "valid_accuracy": 87.3397,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 10,
+      "train_loss": 0.1382,
+      "train_accuracy": 95.1687,
+      "valid_loss": 0.5478,
+      "valid_accuracy": 76.7628,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 11,
+      "train_loss": 0.1331,
+      "train_accuracy": 95.092,
+      "valid_loss": 1.2847,
+      "valid_accuracy": 63.6218,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 12,
+      "train_loss": 0.1375,
+      "train_accuracy": 94.9962,
+      "valid_loss": 0.3045,
+      "valid_accuracy": 88.7821,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 13,
+      "train_loss": 0.1206,
+      "train_accuracy": 95.4755,
+      "valid_loss": 0.4182,
+      "valid_accuracy": 84.1346,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 14,
+      "train_loss": 0.1246,
+      "train_accuracy": 95.6097,
+      "valid_loss": 0.3249,
+      "valid_accuracy": 89.2628,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 15,
+      "train_loss": 0.1032,
+      "train_accuracy": 96.3957,
+      "valid_loss": 0.3828,
+      "valid_accuracy": 86.0577,
+      "lr": 0.0
+    },
+    {
+      "epochs": 16,
+      "train_loss": 0.1072,
+      "train_accuracy": 96.1656,
+      "valid_loss": 0.4033,
+      "valid_accuracy": 85.5769,
+      "lr": 0.0
+    },
+    {
+      "epochs": 17,
+      "train_loss": 0.1027,
+      "train_accuracy": 96.2615,
+      "valid_loss": 0.4103,
+      "valid_accuracy": 85.2564,
+      "lr": 0.0
+    },
+    {
+      "epochs": 18,
+      "train_loss": 0.1003,
+      "train_accuracy": 96.4916,
+      "valid_loss": 0.4087,
+      "valid_accuracy": 85.2564,
+      "lr": 0.0
+    },
+    {
+      "epochs": 19,
+      "train_loss": 0.1001,
+      "train_accuracy": 96.4916,
+      "valid_loss": 0.4557,
+      "valid_accuracy": 83.9744,
+      "lr": 0.0
+    },
+    {
+      "epochs": 20,
+      "train_loss": 0.1037,
+      "train_accuracy": 96.3765,
+      "valid_loss": 0.5276,
+      "valid_accuracy": 81.25,
+      "lr": 0.0
+    }
+  ]
+}

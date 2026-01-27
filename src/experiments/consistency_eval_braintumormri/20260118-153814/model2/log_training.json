@@ -1,0 +1,199 @@
+{
+  "model": {
+    "model": "Model2(\n  (features): Sequential(\n    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (2): ReLU()\n    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (4): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (6): ReLU()\n    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (8): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (10): ReLU()\n    (11): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (12): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (13): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (14): ReLU()\n  )\n  (classifier): Sequential(\n    (0): AdaptiveAvgPool2d(output_size=(1, 1))\n    (1): Flatten(start_dim=1, end_dim=-1)\n    (2): Dropout(p=0.5, inplace=False)\n    (3): Linear(in_features=256, out_features=4, bias=True)\n  )\n  (_target_layer): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n)",
+    "criterion": "CrossEntropyLoss()",
+    "optimizer": "Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n    capturable: False\n    decoupled_weight_decay: False\n    differentiable: False\n    eps: 1e-08\n    foreach: None\n    fused: None\n    lr: 0.0001\n    maximize: False\n    weight_decay: 0\n)",
+    "scheduler": "<torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x7f8f926c60d0>",
+    "device": "cuda",
+    "seed": 337863021
+  },
+  "dataset": {
+    "name": "Brain Tumor MRI",
+    "description": "MRI images of brain tumors categorized into four types.",
+    "source": "https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset",
+    "task": "image classification",
+    "num_labels": 4,
+    "label_names": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "length": {
+      "train": 5712,
+      "test": 1311,
+      "val": null
+    }
+  },
+  "epochs": 20,
+  "start_time": null,
+  "end_time": null,
+  "duration": null,
+  "best_epoch": {
+    "epochs": 14,
+    "valid_accuracy": 85.1259,
+    "valid_loss": 0.4211
+  },
+  "history": [
+    {
+      "epochs": 1,
+      "train_loss": 0.9077,
+      "train_accuracy": 65.1786,
+      "valid_loss": 0.8998,
+      "valid_accuracy": 63.2342,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 2,
+      "train_loss": 0.7251,
+      "train_accuracy": 73.4944,
+      "valid_loss": 0.7342,
+      "valid_accuracy": 69.3364,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 3,
+      "train_loss": 0.6453,
+      "train_accuracy": 76.9433,
+      "valid_loss": 0.7295,
+      "valid_accuracy": 71.701,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 4,
+      "train_loss": 0.5964,
+      "train_accuracy": 78.6239,
+      "valid_loss": 0.6774,
+      "valid_accuracy": 73.913,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 5,
+      "train_loss": 0.5575,
+      "train_accuracy": 80.042,
+      "valid_loss": 0.6238,
+      "valid_accuracy": 76.0488,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 6,
+      "train_loss": 0.5247,
+      "train_accuracy": 81.1099,
+      "valid_loss": 0.576,
+      "valid_accuracy": 78.4134,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 7,
+      "train_loss": 0.4916,
+      "train_accuracy": 83.2633,
+      "valid_loss": 0.6725,
+      "valid_accuracy": 69.7941,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 8,
+      "train_loss": 0.4794,
+      "train_accuracy": 83.3508,
+      "valid_loss": 0.4936,
+      "valid_accuracy": 82.7613,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 9,
+      "train_loss": 0.4669,
+      "train_accuracy": 83.1933,
+      "valid_loss": 0.5012,
+      "valid_accuracy": 79.0999,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 10,
+      "train_loss": 0.4508,
+      "train_accuracy": 84.0511,
+      "valid_loss": 0.628,
+      "valid_accuracy": 80.778,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 11,
+      "train_loss": 0.4245,
+      "train_accuracy": 85.2766,
+      "valid_loss": 0.5716,
+      "valid_accuracy": 77.9558,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 12,
+      "train_loss": 0.4164,
+      "train_accuracy": 85.6618,
+      "valid_loss": 0.4476,
+      "valid_accuracy": 83.0664,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 13,
+      "train_loss": 0.4048,
+      "train_accuracy": 85.5742,
+      "valid_loss": 0.5147,
+      "valid_accuracy": 80.6255,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 14,
+      "train_loss": 0.4011,
+      "train_accuracy": 85.7318,
+      "valid_loss": 0.4211,
+      "valid_accuracy": 85.1259,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 15,
+      "train_loss": 0.3842,
+      "train_accuracy": 86.9048,
+      "valid_loss": 0.4461,
+      "valid_accuracy": 82.685,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 16,
+      "train_loss": 0.3755,
+      "train_accuracy": 86.7297,
+      "valid_loss": 0.4617,
+      "valid_accuracy": 83.7529,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 17,
+      "train_loss": 0.3788,
+      "train_accuracy": 87.1324,
+      "valid_loss": 0.6111,
+      "valid_accuracy": 77.193,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 18,
+      "train_loss": 0.3668,
+      "train_accuracy": 87.2024,
+      "valid_loss": 0.4324,
+      "valid_accuracy": 82.8375,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 19,
+      "train_loss": 0.3637,
+      "train_accuracy": 86.7997,
+      "valid_loss": 0.405,
+      "valid_accuracy": 84.5919,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 20,
+      "train_loss": 0.3508,
+      "train_accuracy": 87.9902,
+      "valid_loss": 0.6195,
+      "valid_accuracy": 78.2609,
+      "lr": 0.0001
+    }
+  ]
+}

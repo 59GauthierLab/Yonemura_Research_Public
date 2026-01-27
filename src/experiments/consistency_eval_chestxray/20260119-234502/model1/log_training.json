@@ -1,0 +1,197 @@
+{
+  "model": {
+    "model": "Model1(\n  (features): Sequential(\n    (0): Conv2d(1, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (1): ReLU()\n    (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (3): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (4): ReLU()\n    (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n  )\n  (classifier): Sequential(\n    (0): AdaptiveAvgPool2d(output_size=(1, 1))\n    (1): Flatten(start_dim=1, end_dim=-1)\n    (2): Linear(in_features=32, out_features=2, bias=True)\n  )\n  (_target_layer): ReLU()\n)",
+    "criterion": "CrossEntropyLoss()",
+    "optimizer": "Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n    capturable: False\n    decoupled_weight_decay: False\n    differentiable: False\n    eps: 1e-08\n    foreach: None\n    fused: None\n    lr: 1.0000000000000002e-07\n    maximize: False\n    weight_decay: 0\n)",
+    "scheduler": "<torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x7d1f8497f890>",
+    "device": "cuda",
+    "seed": 2428778631
+  },
+  "dataset": {
+    "name": "Chest X-Ray Image (Pneumonia)",
+    "description": "X-ray images categorized into normal and pneumonia classes.",
+    "source": "https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia",
+    "task": "image classification",
+    "num_labels": 2,
+    "label_names": [
+      "NORMAL",
+      "PNEUMONIA"
+    ],
+    "length": {
+      "train": 5216,
+      "test": 624,
+      "val": 16
+    }
+  },
+  "epochs": 20,
+  "start_time": null,
+  "end_time": null,
+  "duration": null,
+  "best_epoch": {
+    "epochs": 1,
+    "valid_accuracy": 62.5,
+    "valid_loss": 0.6696
+  },
+  "history": [
+    {
+      "epochs": 1,
+      "train_loss": 0.6128,
+      "train_accuracy": 74.2906,
+      "valid_loss": 0.6696,
+      "valid_accuracy": 62.5,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 2,
+      "train_loss": 0.584,
+      "train_accuracy": 74.2906,
+      "valid_loss": 0.686,
+      "valid_accuracy": 62.5,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 3,
+      "train_loss": 0.5661,
+      "train_accuracy": 74.2906,
+      "valid_loss": 0.6932,
+      "valid_accuracy": 62.5,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 4,
+      "train_loss": 0.5538,
+      "train_accuracy": 74.2331,
+      "valid_loss": 0.692,
+      "valid_accuracy": 61.3782,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 5,
+      "train_loss": 0.5454,
+      "train_accuracy": 74.0414,
+      "valid_loss": 0.6935,
+      "valid_accuracy": 59.7756,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 6,
+      "train_loss": 0.5375,
+      "train_accuracy": 73.6388,
+      "valid_loss": 0.6971,
+      "valid_accuracy": 58.8141,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 7,
+      "train_loss": 0.5319,
+      "train_accuracy": 73.3512,
+      "valid_loss": 0.6976,
+      "valid_accuracy": 59.9359,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 8,
+      "train_loss": 0.5287,
+      "train_accuracy": 73.8497,
+      "valid_loss": 0.697,
+      "valid_accuracy": 58.8141,
+      "lr": 0.0
+    },
+    {
+      "epochs": 9,
+      "train_loss": 0.5284,
+      "train_accuracy": 73.6388,
+      "valid_loss": 0.6971,
+      "valid_accuracy": 58.9744,
+      "lr": 0.0
+    },
+    {
+      "epochs": 10,
+      "train_loss": 0.5286,
+      "train_accuracy": 73.5621,
+      "valid_loss": 0.6974,
+      "valid_accuracy": 58.6538,
+      "lr": 0.0
+    },
+    {
+      "epochs": 11,
+      "train_loss": 0.5282,
+      "train_accuracy": 73.5238,
+      "valid_loss": 0.6974,
+      "valid_accuracy": 58.6538,
+      "lr": 0.0
+    },
+    {
+      "epochs": 12,
+      "train_loss": 0.5277,
+      "train_accuracy": 73.5621,
+      "valid_loss": 0.6977,
+      "valid_accuracy": 58.6538,
+      "lr": 0.0
+    },
+    {
+      "epochs": 13,
+      "train_loss": 0.527,
+      "train_accuracy": 73.6005,
+      "valid_loss": 0.6978,
+      "valid_accuracy": 58.1731,
+      "lr": 0.0
+    },
+    {
+      "epochs": 14,
+      "train_loss": 0.5266,
+      "train_accuracy": 73.5238,
+      "valid_loss": 0.6978,
+      "valid_accuracy": 58.1731,
+      "lr": 0.0
+    },
+    {
+      "epochs": 15,
+      "train_loss": 0.5271,
+      "train_accuracy": 73.5429,
+      "valid_loss": 0.6978,
+      "valid_accuracy": 58.1731,
+      "lr": 0.0
+    },
+    {
+      "epochs": 16,
+      "train_loss": 0.5259,
+      "train_accuracy": 73.6388,
+      "valid_loss": 0.6978,
+      "valid_accuracy": 58.1731,
+      "lr": 0.0
+    },
+    {
+      "epochs": 17,
+      "train_loss": 0.5258,
+      "train_accuracy": 73.5046,
+      "valid_loss": 0.6978,
+      "valid_accuracy": 58.1731,
+      "lr": 0.0
+    },
+    {
+      "epochs": 18,
+      "train_loss": 0.5259,
+      "train_accuracy": 73.6771,
+      "valid_loss": 0.6978,
+      "valid_accuracy": 58.0128,
+      "lr": 0.0
+    },
+    {
+      "epochs": 19,
+      "train_loss": 0.5266,
+      "train_accuracy": 73.4854,
+      "valid_loss": 0.6978,
+      "valid_accuracy": 58.0128,
+      "lr": 0.0
+    },
+    {
+      "epochs": 20,
+      "train_loss": 0.5257,
+      "train_accuracy": 73.4854,
+      "valid_loss": 0.6978,
+      "valid_accuracy": 58.0128,
+      "lr": 0.0
+    }
+  ]
+}

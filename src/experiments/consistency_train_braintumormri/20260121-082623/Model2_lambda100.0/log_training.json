@@ -1,0 +1,439 @@
+{
+  "model": {
+    "model": "Model2(\n  (features): Sequential(\n    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (2): ReLU()\n    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (4): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (6): ReLU()\n    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (8): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (10): ReLU()\n    (11): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n    (12): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n    (13): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (14): ReLU()\n  )\n  (classifier): Sequential(\n    (0): AdaptiveAvgPool2d(output_size=(1, 1))\n    (1): Flatten(start_dim=1, end_dim=-1)\n    (2): Dropout(p=0.5, inplace=False)\n    (3): Linear(in_features=256, out_features=4, bias=True)\n  )\n  (_target_layer): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n)",
+    "criterion": "CamConsistencyLossWithCrossEntropy(\n  (model): Model2(\n    (features): Sequential(\n      (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (2): ReLU()\n      (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      (4): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n      (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (6): ReLU()\n      (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      (8): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n      (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (10): ReLU()\n      (11): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n      (12): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n      (13): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (14): ReLU()\n    )\n    (classifier): Sequential(\n      (0): AdaptiveAvgPool2d(output_size=(1, 1))\n      (1): Flatten(start_dim=1, end_dim=-1)\n      (2): Dropout(p=0.5, inplace=False)\n      (3): Linear(in_features=256, out_features=4, bias=True)\n    )\n    (_target_layer): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n  )\n  (cam_consistency_loss): CamConsistencyLoss(\n    (model): Model2(\n      (features): Sequential(\n        (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n        (2): ReLU()\n        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n        (4): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n        (6): ReLU()\n        (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n        (8): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (9): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n        (10): ReLU()\n        (11): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)\n        (12): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))\n        (13): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n        (14): ReLU()\n      )\n      (classifier): Sequential(\n        (0): AdaptiveAvgPool2d(output_size=(1, 1))\n        (1): Flatten(start_dim=1, end_dim=-1)\n        (2): Dropout(p=0.5, inplace=False)\n        (3): Linear(in_features=256, out_features=4, bias=True)\n      )\n      (_target_layer): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (cross_entropy_loss): CrossEntropyLoss()\n)",
+    "optimizer": "Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n    capturable: False\n    decoupled_weight_decay: False\n    differentiable: False\n    eps: 1e-08\n    foreach: None\n    fused: None\n    lr: 1e-05\n    maximize: False\n    weight_decay: 0\n)",
+    "scheduler": "[(<torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x73366ebed6d0>, 'validation'), (<loss_func.LambdaScheduler object at 0x73366466cdd0>, 'epoch')]",
+    "device": "cuda",
+    "seed": 869725960
+  },
+  "dataset": {
+    "name": "Brain Tumor MRI",
+    "description": "MRI images of brain tumors categorized into four types.",
+    "source": "https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset",
+    "task": "image classification",
+    "num_labels": 4,
+    "label_names": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "length": {
+      "train": 5712,
+      "test": 1311,
+      "val": null
+    }
+  },
+  "epochs": 50,
+  "start_time": null,
+  "end_time": null,
+  "duration": null,
+  "best_epoch": {
+    "epochs": 49,
+    "valid_accuracy": 90.8467,
+    "valid_loss": 0.2588
+  },
+  "history": [
+    {
+      "epochs": 1,
+      "train_loss": 0.8871,
+      "train_accuracy": 65.9489,
+      "valid_loss": 0.801,
+      "valid_accuracy": 68.7262,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 2,
+      "train_loss": 0.7203,
+      "train_accuracy": 73.722,
+      "valid_loss": 0.7902,
+      "valid_accuracy": 65.9802,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 3,
+      "train_loss": 0.7385,
+      "train_accuracy": 76.1905,
+      "valid_loss": 0.7373,
+      "valid_accuracy": 71.5484,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 4,
+      "train_loss": 0.7595,
+      "train_accuracy": 78.5364,
+      "valid_loss": 0.6394,
+      "valid_accuracy": 75.2098,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 5,
+      "train_loss": 0.7696,
+      "train_accuracy": 79.9895,
+      "valid_loss": 0.6568,
+      "valid_accuracy": 73.074,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 6,
+      "train_loss": 0.7779,
+      "train_accuracy": 81.4251,
+      "valid_loss": 0.5629,
+      "valid_accuracy": 77.4218,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 7,
+      "train_loss": 0.777,
+      "train_accuracy": 81.6877,
+      "valid_loss": 0.6013,
+      "valid_accuracy": 76.5828,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 8,
+      "train_loss": 0.7662,
+      "train_accuracy": 82.0378,
+      "valid_loss": 0.5714,
+      "valid_accuracy": 81.0831,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 9,
+      "train_loss": 0.7576,
+      "train_accuracy": 83.4384,
+      "valid_loss": 0.5513,
+      "valid_accuracy": 79.8627,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 10,
+      "train_loss": 0.7691,
+      "train_accuracy": 83.2633,
+      "valid_loss": 0.55,
+      "valid_accuracy": 79.1762,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 11,
+      "train_loss": 0.7307,
+      "train_accuracy": 84.5588,
+      "valid_loss": 0.4867,
+      "valid_accuracy": 83.524,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 12,
+      "train_loss": 0.7085,
+      "train_accuracy": 84.7164,
+      "valid_loss": 0.5686,
+      "valid_accuracy": 76.1251,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 13,
+      "train_loss": 0.687,
+      "train_accuracy": 84.8739,
+      "valid_loss": 0.4941,
+      "valid_accuracy": 79.2525,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 14,
+      "train_loss": 0.6643,
+      "train_accuracy": 85.3641,
+      "valid_loss": 0.4995,
+      "valid_accuracy": 82.5324,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 15,
+      "train_loss": 0.6504,
+      "train_accuracy": 86.0119,
+      "valid_loss": 0.5843,
+      "valid_accuracy": 77.3455,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 16,
+      "train_loss": 0.6356,
+      "train_accuracy": 85.8894,
+      "valid_loss": 0.5861,
+      "valid_accuracy": 74.9047,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 17,
+      "train_loss": 0.6239,
+      "train_accuracy": 86.5546,
+      "valid_loss": 0.4593,
+      "valid_accuracy": 80.778,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 18,
+      "train_loss": 0.6107,
+      "train_accuracy": 87.1849,
+      "valid_loss": 0.4509,
+      "valid_accuracy": 84.5156,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 19,
+      "train_loss": 0.6032,
+      "train_accuracy": 87.605,
+      "valid_loss": 0.5699,
+      "valid_accuracy": 81.8459,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 20,
+      "train_loss": 0.6052,
+      "train_accuracy": 86.7297,
+      "valid_loss": 0.3918,
+      "valid_accuracy": 85.5835,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 21,
+      "train_loss": 0.5973,
+      "train_accuracy": 86.9573,
+      "valid_loss": 0.5027,
+      "valid_accuracy": 81.9985,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 22,
+      "train_loss": 0.5854,
+      "train_accuracy": 87.3424,
+      "valid_loss": 0.4839,
+      "valid_accuracy": 82.151,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 23,
+      "train_loss": 0.5738,
+      "train_accuracy": 88.1478,
+      "valid_loss": 0.3921,
+      "valid_accuracy": 84.897,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 24,
+      "train_loss": 0.58,
+      "train_accuracy": 87.1148,
+      "valid_loss": 0.5723,
+      "valid_accuracy": 77.8032,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 25,
+      "train_loss": 0.5644,
+      "train_accuracy": 87.6225,
+      "valid_loss": 0.4059,
+      "valid_accuracy": 85.2784,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 26,
+      "train_loss": 0.5558,
+      "train_accuracy": 87.8326,
+      "valid_loss": 0.3724,
+      "valid_accuracy": 85.7361,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 27,
+      "train_loss": 0.5565,
+      "train_accuracy": 88.3053,
+      "valid_loss": 0.4278,
+      "valid_accuracy": 83.4477,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 28,
+      "train_loss": 0.5379,
+      "train_accuracy": 88.9881,
+      "valid_loss": 0.3473,
+      "valid_accuracy": 86.8802,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 29,
+      "train_loss": 0.5438,
+      "train_accuracy": 88.5154,
+      "valid_loss": 0.3569,
+      "valid_accuracy": 86.9565,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 30,
+      "train_loss": 0.5398,
+      "train_accuracy": 88.2178,
+      "valid_loss": 0.3534,
+      "valid_accuracy": 86.804,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 31,
+      "train_loss": 0.5192,
+      "train_accuracy": 89.4433,
+      "valid_loss": 0.381,
+      "valid_accuracy": 87.0328,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 32,
+      "train_loss": 0.5302,
+      "train_accuracy": 88.778,
+      "valid_loss": 0.4883,
+      "valid_accuracy": 82.8375,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 33,
+      "train_loss": 0.5305,
+      "train_accuracy": 88.5504,
+      "valid_loss": 0.3179,
+      "valid_accuracy": 88.7109,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 34,
+      "train_loss": 0.5174,
+      "train_accuracy": 88.8655,
+      "valid_loss": 0.5616,
+      "valid_accuracy": 78.566,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 35,
+      "train_loss": 0.5104,
+      "train_accuracy": 89.2157,
+      "valid_loss": 0.3297,
+      "valid_accuracy": 88.177,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 36,
+      "train_loss": 0.4989,
+      "train_accuracy": 89.916,
+      "valid_loss": 0.4108,
+      "valid_accuracy": 85.431,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 37,
+      "train_loss": 0.5029,
+      "train_accuracy": 89.3557,
+      "valid_loss": 0.4148,
+      "valid_accuracy": 84.2105,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 38,
+      "train_loss": 0.5106,
+      "train_accuracy": 88.9706,
+      "valid_loss": 0.663,
+      "valid_accuracy": 74.7521,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 39,
+      "train_loss": 0.4919,
+      "train_accuracy": 89.6534,
+      "valid_loss": 0.2944,
+      "valid_accuracy": 89.3974,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 40,
+      "train_loss": 0.4847,
+      "train_accuracy": 89.9335,
+      "valid_loss": 0.3763,
+      "valid_accuracy": 86.7277,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 41,
+      "train_loss": 0.4864,
+      "train_accuracy": 89.951,
+      "valid_loss": 0.4413,
+      "valid_accuracy": 83.1426,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 42,
+      "train_loss": 0.4827,
+      "train_accuracy": 90.3711,
+      "valid_loss": 0.4,
+      "valid_accuracy": 85.0496,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 43,
+      "train_loss": 0.4903,
+      "train_accuracy": 89.881,
+      "valid_loss": 0.5255,
+      "valid_accuracy": 82.8375,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 44,
+      "train_loss": 0.4774,
+      "train_accuracy": 90.3887,
+      "valid_loss": 0.4955,
+      "valid_accuracy": 81.6934,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 45,
+      "train_loss": 0.4912,
+      "train_accuracy": 89.2332,
+      "valid_loss": 0.4277,
+      "valid_accuracy": 85.8124,
+      "lr": 0.0001
+    },
+    {
+      "epochs": 46,
+      "train_loss": 0.4448,
+      "train_accuracy": 91.2465,
+      "valid_loss": 0.2701,
+      "valid_accuracy": 90.7704,
+      "lr": 0.0
+    },
+    {
+      "epochs": 47,
+      "train_loss": 0.4353,
+      "train_accuracy": 92.0343,
+      "valid_loss": 0.2675,
+      "valid_accuracy": 90.3127,
+      "lr": 0.0
+    },
+    {
+      "epochs": 48,
+      "train_loss": 0.4343,
+      "train_accuracy": 91.9643,
+      "valid_loss": 0.269,
+      "valid_accuracy": 90.3127,
+      "lr": 0.0
+    },
+    {
+      "epochs": 49,
+      "train_loss": 0.4292,
+      "train_accuracy": 92.0868,
+      "valid_loss": 0.2588,
+      "valid_accuracy": 90.8467,
+      "lr": 0.0
+    },
+    {
+      "epochs": 50,
+      "train_loss": 0.4281,
+      "train_accuracy": 91.8943,
+      "valid_loss": 0.262,
+      "valid_accuracy": 90.389,
+      "lr": 0.0
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+    "experiment_name": "consistency_train_consistency_train_chestxray",
+    "description": "一貫性を損失関数に組み込む実験(Chest X-rayデータセット使用)",
+    "created_at": "2026-01-20T23:44:45.901506"
+}

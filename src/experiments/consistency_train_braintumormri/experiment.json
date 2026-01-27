@@ -1,0 +1,5 @@
+{
+    "experiment_name": "consistency_train_braintumormri",
+    "description": "一貫性を損失関数に組み込む実験(Brain Tumor MRIデータセット使用)",
+    "created_at": "2026-01-18T16:44:45.901506"
+}
