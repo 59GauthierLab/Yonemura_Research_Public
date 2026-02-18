@@ -1,5 +1,12 @@
 # Yonemura_Research
 
+## Docs
+
+- [`docs/interim.pdf`](docs/thesis.pdf): 論文
+- [`docs/abstract.pdf`](docs/abstract.pdf): 概要資料
+- [`docs/interim.pdf`](docs/interim.pdf): 中間発表資料
+- [`docs/slides.pdf`](docs/interim.pdf): 最終発表資料
+
 ## Setup
 
 ```bash
